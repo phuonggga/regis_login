@@ -12,6 +12,8 @@ def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
       # Handle a successful save.
+      #sign up thang nao vao thang do
+      log_in @user
       flash[:success] = "Welcome to the Demo"
       redirect_to @user
     else
